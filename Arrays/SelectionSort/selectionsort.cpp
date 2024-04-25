@@ -11,9 +11,7 @@ void SelectionSort(int n, int arr[]){
             } 
         }
         //swap with min
-        int temp = arr[min];
-        arr[min] = arr[i];
-        arr[i] = temp;
+        swap(arr[i],arr[min]);
     }
 }
 
