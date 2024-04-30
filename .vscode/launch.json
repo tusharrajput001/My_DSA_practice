@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/PRACTICE/DSA_PRACTICE/Arrays/SelectionSort",
-      "program": "d:/PRACTICE/DSA_PRACTICE/Arrays/SelectionSort/build/Debug/outDebug",
+      "cwd": "d:/PRACTICE/DSA_PRACTICE/Arrays/Largest_&_Smallest_Element",
+      "program": "d:/PRACTICE/DSA_PRACTICE/Arrays/Largest_&_Smallest_Element/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
