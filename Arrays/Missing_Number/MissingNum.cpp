@@ -9,7 +9,7 @@ int main()
     for (int i = 1; i <= n; i++)
     {
         int flag = 0; // Reset flag to 0 for each i
-
+            
         for (int j = 0; j < n - 1; j++)
         {
             if (arr[j] == i)
