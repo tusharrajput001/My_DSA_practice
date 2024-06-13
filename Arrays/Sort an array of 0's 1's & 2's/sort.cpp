@@ -40,7 +40,7 @@ void sortArray(vector<int>& arr, int n){
         if(arr[mid] == 0){
             swap(arr[low], arr[mid]);
             low++;
-            mid++;
+            mid++;  
         }
         else if(arr[mid] == 1){
             mid++;
