@@ -1,30 +1,49 @@
+// -----  largest element in array ------
 
-#include <iostream>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
-int main()
-{
-    int n = 9;
-    int arr[n] = {40, 12, 43, 23, 56, 34, 22, 100, 22, 12};
-    int largest = arr[0];
-    cout << "Largest Element in array: ";
-    for (int i = 1; i <= n; i++)
-    {
-        if (arr[i] > largest)
-        {
-            largest = arr[i];
-        }
-    }
-    cout << largest << " "<< endl;
+// int main()
+// {
+//     int n = 5;
+//     int arr[n] = {12, 22, 41, 63, 13};
+//     int largest = arr[0];
 
-    int smallest = arr[0];
-    cout << "Smallest Element in array: ";
-    for (int i = 1; i <= n; i++){
-        if(arr[i] < smallest){
-            smallest = arr[i];
-        }
-    }
-    cout << smallest << " "; 
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (arr[i] > largest)
+//         {
+//             largest = arr[i];
+//         }
+//     }
+//     cout << "The largest element in array is : "<< largest;
+// }
 
-    return 0;
-}
+
+
+
+// -----  smallest element in array ------
+
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main()
+// {
+//     int n = 5;
+//     int arr[n] = {12, 22, 41, 63, 13};
+//     int smallest = arr[0];
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (arr[i] < smallest)
+//         {
+//             smallest = arr[i];
+//         }
+//     }
+//     cout << "The smallest element in array is : "<< smallest;
+// }
+
+
+
+
