@@ -73,22 +73,58 @@ using namespace std;
 
 // }
 
-// Optiamal approach using XOR  
-// In xor = 4 ^ 4 = 0 , 1 ^ 0 = 1 
+// Optiamal approach using XOR
+// In xor = 4 ^ 4 = 0 , 1 ^ 0 = 1
+// int getSingleElement(vector<int> arr)
+// {
+//     int n = arr.size();
+//     int xorr = 0;
+//     for (int i = 0; i < n; i++)
+//     {
+//         xorr = xorr ^ arr[i];
+//     }
+//     return xorr;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {4, 2, 7, 4, 2};
+//     int ans = getSingleElement(arr);
+//     cout << "The single element is: " << ans << endl;
+//     return 0;
+// }
+
+#include <bits/stdc++.h>
+using namespace std;
+
 int getSingleElement(vector<int> arr)
 {
     int n = arr.size();
-    int xorr = 0;
+    int maxi = arr[0];
     for (int i = 0; i < n; i++)
     {
-        xorr = xorr ^ arr[i];
+        maxi = max(maxi, arr[i]);
     }
-    return xorr;
+
+    vector<int> hash(maxi + 1, 0);
+
+    for (int i = 0; i < n; i++)
+    {
+        hash[arr[i]]++;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        if (hash[i] == 1)
+        {
+            return i;
+        }
+    }
 }
 
 int main()
 {
-    vector<int> arr = {4, 2, 7, 4, 2};
+    vector<int> arr = {4, 1, 2, 1, 2, 4, 5, 6, 6};
     int ans = getSingleElement(arr);
     cout << "The single element is: " << ans << endl;
     return 0;

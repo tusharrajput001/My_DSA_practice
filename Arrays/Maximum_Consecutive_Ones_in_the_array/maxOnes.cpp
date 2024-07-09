@@ -1,29 +1,38 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int MaxConOnes(int arr[], int n){
-    int count = 0;
-    int max_count = 0;
-    for (int i = 0; i < n; i++)
+class Solution
+{
+public:
+    int findMaxConsecutiveOnes(vector<int> &arr)
     {
-        if(arr[i] == 1){
-            count++;
-            max_count = max(max_count, count);
-        }
-        else{
-            count = 0;
+        int cnt = 0;
+        int maxi = 0;
+        int n = arr.size();
+        for (int i = 0; i < n; i++)
+        {
+            if (arr[i] == 1)
+            {
+                cnt++;
+            }
+
+            else
+            {
+                cnt = 0;
+            }
+
+            maxi = max(cnt, maxi);
         }
 
+        return maxi;
     }
-    cout << max_count;
-    
-}
+};
 
-
-
-
-int main(){
-    int n = 6;
-    int arr[n] = {1, 1, 0, 1, 1, 1};
-    MaxConOnes(arr, n);
+int main()
+{
+    vector<int> nums = {1, 1, 0, 1, 1, 1};
+    Solution obj;
+    int ans = obj.findMaxConsecutiveOnes(nums);
+    cout << "The maximum  consecutive 1's are " << ans;
+    return 0;
 }
