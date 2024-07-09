@@ -93,3 +93,25 @@ int main(){
     cout << "This is the answer for variant 2: [" << ans[0] << ", "<< ans[1] << "]" << endl;
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
