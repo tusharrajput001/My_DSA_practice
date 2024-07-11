@@ -1,25 +1,60 @@
-#include <bits/stdc++.h>
+
+// BRUTE FORCE
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int maxProfit(vector<int> &arr)
+// {
+//     int maxPro = 0;
+//     int n = arr.size();
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         for (int j = i + 1; j < n; j++)
+//         {
+//             if (arr[j] > arr[i])
+//             {
+//                 maxPro = max(arr[j] - arr[i], maxPro);
+//             }
+//         }
+//     }
+
+//     return maxPro;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {7, 1, 5, 3, 6, 4};
+//     int maxPro = maxProfit(arr);
+//     cout << "Max profit is: " << maxPro << endl;
+// }
+
+
+// OPTIMAL APPROACH
+
+
+
+#include<bits/stdc++.h>
 using namespace std;
 
-int maxProfit(int prices[], int n) {
-    if (n == 0) return 0; // Edge case: no prices given
+int maxProfit(vector<int> &arr) {
+    int maxPro = 0;
+    int minPrice = INT_MAX;
 
-    int mini = prices[0];
-    int profit = 0;
-
-    for (int i = 1; i < n; i++) {
-        int cost = prices[i] - mini;
-        profit = max(cost, profit);
-        mini = min(prices[i], mini);
+    for (size_t i = 0; i < arr.size(); i++)
+    {
+        minPrice = min(minPrice, arr[i]);
+        maxPro = max(maxPro, arr[i] - minPrice);
     }
+    
 
-    return profit;
+    return maxPro;  
 }
 
 int main() {
-    int arr[] = {7, 1, 5, 3, 6, 4};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int maxProfitValue = maxProfit(arr, n);
-    cout << "The maximum profit is: " << maxProfitValue << endl;
-    return 0;
+    vector<int> arr = {7,1,5,3,6,4};
+    int maxPro = maxProfit(arr);
+    cout << "Max profit is: " << maxPro << endl;
 }
+
