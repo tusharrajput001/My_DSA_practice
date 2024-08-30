@@ -1,6 +1,9 @@
 // SELECTION SORT IS NOTHING JUST ASSUME THE 1st element to be the smallest then check witch rest all of
 // the element if found any smaller than that then just swap it and move on and at the end you will get
 // your sorted array.
+
+// TC -> O(N2), SC -> O(1)
+
 #include <bits/stdc++.h>
 using namespace std;
 
