@@ -11,7 +11,7 @@ int FirstOcc(vector<int> arr, int n, int x)
         if (arr[mid] == x)
         {
             first = mid;
-            high = mid - 1;
+            high = mid - 1; 
         }
         else if (x > arr[mid])
         {
@@ -41,7 +41,7 @@ int LastOcc(vector<int> arr, int n, int x)
         {
             low = mid + 1;
         }
-        else
+        else 
         {
             high = mid - 1;
         }
