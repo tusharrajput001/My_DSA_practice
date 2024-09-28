@@ -42,7 +42,7 @@ int minimumRateToEatBananas(vector<int> v, int h)
         else
         {
             low = mid + 1;
-        }
+        } 
     }
     return low;
 }
