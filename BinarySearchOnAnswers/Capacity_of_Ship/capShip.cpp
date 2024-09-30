@@ -83,4 +83,4 @@ int main()
     int ans = leastWeightCapacity(weights, d);
     cout << "The minimum capacity should be: " << ans << "\n";
     return 0;
-}
+}  
