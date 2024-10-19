@@ -1,28 +1,35 @@
-class Solution {
-public:
-    bool isIsomorphic(string s, string t) {
-        unordered_map<char,char> mp1;
-        unordered_map<char,char> mp2;
+#include<bits/stdc++.h>
+using namespace std;
 
-        int n = s.length();
+bool isIsomorphic(string s, string t)
+{
+    unordered_map<char, char> mp1;
+    unordered_map<char, char> mp2;
 
-        for(int i=0; i<n; i++){
+    int n = s.length();
 
-            char ch1 = s[i];
-            char ch2 = t[i];
+    for (int i = 0; i < n; i++)
+    {
 
-            // if we already have ch1 in mp1 and it is not equal to ch2 which is mapped previousley OR
-            // if we already have ch2 in mp2 and it is not equal to ch1 which is mapped previousley
-            if(mp1.find(ch1) != mp1.end() && mp1[ch1] != ch2 || mp2.find(ch2) != mp2.end() && mp2[ch2] != ch1){
-                return false;
-            }
+        char ch1 = s[i];
+        char ch2 = t[i];
 
-            mp1[ch1] = ch2;
-            mp2[ch2] = ch1;
+        // if we already have ch1 in mp1 and it is not equal to ch2 which is mapped previousley OR
+        // if we already have ch2 in mp2 and it is not equal to ch1 which is mapped previousley
+        if (mp1.find(ch1) != mp1.end() && mp1[ch1] != ch2 || mp2.find(ch2) != mp2.end() && mp2[ch2] != ch1)
+        {
+            return false;
         }
 
-        return true;
-
-
+        mp1[ch1] = ch2;
+        mp2[ch2] = ch1;
     }
-};
+
+    return true;
+}
+
+int main()
+{
+    int res = isIsomorphic("egg", "add");
+    return res;
+}   
