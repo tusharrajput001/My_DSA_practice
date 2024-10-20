@@ -31,8 +31,9 @@ string frequencySort(string s)
         auto temp = pq.top();
         int freq = temp.first;   // access frequency
         char ch = temp.second;   // access character
+        // this string function will return me the resulting sting for ex-> we have string(2,a) this will return me "aa" as result.
         res += string(freq, ch); // append the character `freq` times to the result string
-
+        // pop the pair.
         pq.pop();
     }
 
