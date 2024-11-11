@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/PRACTICE/DSA_PRACTICE/Arrays/Largest_&_Smallest_Element",
-      "program": "d:/PRACTICE/DSA_PRACTICE/Arrays/Largest_&_Smallest_Element/build/Debug/outDebug",
+      "cwd": "d:/PRACTICE/DSA_PRACTICE/Linked_List/SingleyLL/LL_practice",
+      "program": "d:/PRACTICE/DSA_PRACTICE/Linked_List/SingleyLL/LL_practice/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
