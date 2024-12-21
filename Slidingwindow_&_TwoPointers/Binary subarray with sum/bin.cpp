@@ -32,4 +32,4 @@ int main()
     int n = numSubarraysWithSum(arr, goal);
     cout << n;
     return 0;
-}
+}  
