@@ -26,9 +26,7 @@
 //     return 0;
 // }
 
-
 // factorial
-
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -48,7 +46,6 @@
 //     return fact;
 // }
 
-
 // int main(){
 //     int n = 5;
 //     int ans = fact(n);
@@ -56,11 +53,9 @@
 //     return 0;
 // }
 
-
-//prime number - the number which has only 2 divisors it is 1 or itself 
-// #include <iostream>
-// using namespace std;
-
+// prime number - the number which has only 2 divisors it is 1 or itself
+//  #include <iostream>
+//  using namespace std;
 
 // bool isPrime(int n){
 //     if(n <= 1) return false;
@@ -74,7 +69,6 @@
 //     return true;
 // }
 
-
 // int main()
 // {
 //     isPrime(21) ? cout << " true\n" : cout << " false\n";
@@ -82,14 +76,12 @@
 //     return 0;
 // }
 
-
-//print this pattern
-// *
-// **
-// ***
-// ****
-// *****
-
+// print this pattern
+//  *
+//  **
+//  ***
+//  ****
+//  *****
 
 // #include <iostream>
 // using namespace std;
@@ -103,12 +95,10 @@
 //     }
 // }
 
-
-//reverse a string
+// reverse a string
 
 // #include <iostream>
 // using namespace std;
-
 
 // string ReverseString(string str, int s, int e){
 //     while(s <= e){
@@ -123,8 +113,6 @@
 
 // }
 
-
-
 // int main(){
 //     string str = "TusharRajput";
 
@@ -132,3 +120,36 @@
 //     cout << revStr;
 //     return 0;
 // }
+
+// SELECTION SORT
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// void Selsort(vector<int> &arr)
+// {
+//     int n = arr.size();
+//     for (int i = 0; i < n - 1; i++)
+//     {
+//         int mini = i;
+//         for (int j = i + 1; j < n; j++)
+//         {
+//             if (arr[j] < arr[mini])
+//             {
+//                 mini = j;
+//             }
+//         }
+//         swap(arr[mini], arr[i]);
+//     }
+// }
+
+// int main()
+// {
+//     vector<int> arr = {5, 12, 23, 45, 223, 4, 45};
+//     Selsort(arr);
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
+
+
