@@ -152,4 +152,83 @@
 //     }
 // }
 
+// Left rotate an array by k Places
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// void LeftRotate(vector<int> &arr, int k)
+// {
+//     int n = arr.size();
+//     if (n == 0)
+//         return;
+//     // Optimize the k moves
+//     k = k % n;
+//     if (k > n)
+//     {
+//         return;
+//     }
+//     // temp arr
+//     int temp[k];
+
+//     // store first k elements into the temp array
+//     for (int i = 0; i < k; i++)
+//     {
+//         temp[i] = arr[i];
+//     }
+
+//     // now move the rest elements to front
+//     for (int i = k; i < n; i++)
+//     {
+//         arr[i - k] = arr[i]; // arr[0] = arr[3] , arr[1] = arr[4]
+//     }
+
+//     // now put the temp arr to end of og array
+//     for (int i = n - k; i < n; i++)
+//     {
+//         arr[i] = temp[i - n + k]; // arr[n-k] = temp[n-k - n+k]
+//     }
+// }
+
+//optimal 
+void Reverse(vector<int> &arr, int s, int e){
+    while(s <= e){
+        int temp = arr[s];
+        arr[s] = arr[e];
+        arr[e] = temp;
+        s++;
+        e--;
+    }
+}
+
+
+
+
+void LeftRotate(vector<int> &arr, int k){
+    int n = arr.size();
+    Reverse(arr, 0 , k-1);
+    Reverse(arr,k, n-1);
+    Reverse(arr,0, n-1);
+}
+
+
+
+int main()
+{
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8};
+    int k = 3;
+    cout << "before Rotation" << endl;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    LeftRotate(arr, k);
+    cout << "After Rotation" << endl;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout << arr[i] << " ";
+    }
+}
+
 
