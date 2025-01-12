@@ -191,44 +191,46 @@ using namespace std;
 // }
 
 //optimal 
-void Reverse(vector<int> &arr, int s, int e){
-    while(s <= e){
-        int temp = arr[s];
-        arr[s] = arr[e];
-        arr[e] = temp;
-        s++;
-        e--;
-    }
-}
+// void Reverse(vector<int> &arr, int s, int e){
+//     while(s <= e){
+//         int temp = arr[s];
+//         arr[s] = arr[e];
+//         arr[e] = temp;
+//         s++;
+//         e--;
+//     }
+// }
 
 
 
 
-void LeftRotate(vector<int> &arr, int k){
-    int n = arr.size();
-    Reverse(arr, 0 , k-1);
-    Reverse(arr,k, n-1);
-    Reverse(arr,0, n-1);
-}
+// void LeftRotate(vector<int> &arr, int k){
+//     int n = arr.size();
+//     Reverse(arr, 0 , k-1);
+//     Reverse(arr,k, n-1);
+//     Reverse(arr,0, n-1);
+// }
 
 
 
-int main()
-{
-    vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8};
-    int k = 3;
-    cout << "before Rotation" << endl;
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-    LeftRotate(arr, k);
-    cout << "After Rotation" << endl;
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout << arr[i] << " ";
-    }
-}
+// int main()
+// {
+//     vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8};
+//     int k = 3;
+//     cout << "before Rotation" << endl;
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+//     LeftRotate(arr, k);
+//     cout << "After Rotation" << endl;
+//     for (int i = 0; i < arr.size(); i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
+
+
 
 
