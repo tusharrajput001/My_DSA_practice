@@ -190,19 +190,16 @@ using namespace std;
 //     }
 // }
 
-//optimal 
-// void Reverse(vector<int> &arr, int s, int e){
-//     while(s <= e){
-//         int temp = arr[s];
-//         arr[s] = arr[e];
-//         arr[e] = temp;
-//         s++;
-//         e--;
-//     }
-// }
-
-
-
+// optimal
+//  void Reverse(vector<int> &arr, int s, int e){
+//      while(s <= e){
+//          int temp = arr[s];
+//          arr[s] = arr[e];
+//          arr[e] = temp;
+//          s++;
+//          e--;
+//      }
+//  }
 
 // void LeftRotate(vector<int> &arr, int k){
 //     int n = arr.size();
@@ -210,8 +207,6 @@ using namespace std;
 //     Reverse(arr,k, n-1);
 //     Reverse(arr,0, n-1);
 // }
-
-
 
 // int main()
 // {
@@ -231,9 +226,7 @@ using namespace std;
 //     }
 // }
 
-
-
-// Maximum Concecutive ones 
+// Maximum Concecutive ones
 // class Solution {
 // public:
 //     int findMaxConsecutiveOnes(vector<int>& nums) {
@@ -253,5 +246,31 @@ using namespace std;
 //     }
 // };
 
+//missing number
+// #include <bits/stdc++.h>
+// using namespace std;
 
+// int FindMissingNumber(vector<int> &arr)
+// {
+//     int n = arr.size();
+//     // addition upto nelements
+//     int sum1 = (n * (n + 1) / 2);
 
+//     // addition of array elements
+//     int sum2 = 0;
+//     for (int i = 0; i < n; i++)
+//     {
+//         sum2 += arr[i];
+//     }
+
+//     int missingNum = sum1 - sum2;
+//     return missingNum;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {1, 2, 3, 0, 5};
+//     int MissingNumber = FindMissingNumber(arr);
+//     cout << MissingNumber << endl;
+//     return 0;
+// }
