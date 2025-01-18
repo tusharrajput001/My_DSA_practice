@@ -246,9 +246,9 @@ using namespace std;
 //     }
 // };
 
-//missing number
-// #include <bits/stdc++.h>
-// using namespace std;
+// missing number
+//  #include <bits/stdc++.h>
+//  using namespace std;
 
 // int FindMissingNumber(vector<int> &arr)
 // {
@@ -274,3 +274,73 @@ using namespace std;
 //     cout << MissingNumber << endl;
 //     return 0;
 // }
+
+// longest subarray with given sum k positives
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// bruteforce approach
+// int longestSubarrayWithSumK(vector<int> &arr, int n, int k)
+// {
+//     int maxLen = 0;
+//     for (int i = 0; i < n; i++)
+//     {
+//         int sum = 0;
+//         for (int j = i; j < n; j++)
+//         {
+//             sum += arr[j];
+//             if (sum == k)
+//             {
+//                 maxLen = max(maxLen, j - i + 1);
+//             }
+//         }
+//     }
+//     return maxLen;
+// }
+
+// optimal Approach
+int longestSubarrayWithSumK(vector<int> &arr, int n, int k)
+{
+    int maxLen = 0;
+    long long sum = arr[0];
+    int right = 0, left = 0;
+
+    while (right < n)
+    {
+
+        // left pointer
+        while (left <= right && sum > k)
+        {
+            sum -= arr[left];
+            left++;
+        }
+
+        // checking
+
+        if (sum == k)
+        {
+            maxLen = max(maxLen, right - left + 1);
+        }
+
+        // right pointer
+
+        right++;
+        if (right < n)
+        {
+            sum += arr[right];
+        }
+    }
+
+    return maxLen;
+}
+
+int main()
+{
+    vector<int> arr = {1, 1, 2, 1, 2, 3, 4, 4, 5, 3};
+    int n = arr.size();
+    int k = 6;
+    int longestSub = longestSubarrayWithSumK(arr, n, k);
+    cout << longestSub << endl;
+    return 0;
+}
