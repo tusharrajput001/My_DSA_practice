@@ -277,8 +277,8 @@ using namespace std;
 
 // longest subarray with given sum k positives
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
 // bruteforce approach
 // int longestSubarrayWithSumK(vector<int> &arr, int n, int k)
@@ -300,47 +300,90 @@ using namespace std;
 // }
 
 // optimal Approach
-int longestSubarrayWithSumK(vector<int> &arr, int n, int k)
-{
-    int maxLen = 0;
-    long long sum = arr[0];
-    int right = 0, left = 0;
+// int longestSubarrayWithSumK(vector<int> &arr, int n, int k)
+// {
+//     int maxLen = 0;
+//     long long sum = arr[0];
+//     int right = 0, left = 0;
 
-    while (right < n)
+//     while (right < n)
+//     {
+
+//         // left pointer
+//         while (left <= right && sum > k)
+//         {
+//             sum -= arr[left];
+//             left++;
+//         }
+
+//         // checking
+
+//         if (sum == k)
+//         {
+//             maxLen = max(maxLen, right - left + 1);
+//         }
+
+//         // right pointer
+
+//         right++;
+//         if (right < n)
+//         {
+//             sum += arr[right];
+//         }
+//     }
+
+//     return maxLen;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {1, 1, 2, 1, 2, 3, 4, 4, 5, 3};
+//     int n = arr.size();
+//     int k = 6;
+//     int longestSub = longestSubarrayWithSumK(arr, n, k);
+//     cout << longestSub << endl;
+//     return 0;
+// }
+
+
+
+
+//sort 0 1 2s in an array / Sort colors
+
+//brute - sorting (selection sort, Quick sort, merge sort)
+// Better Approach is - > 
+
+//dutch national flag Algorithm
+void SortColors(vector<int>& arr, int n){
+    int low = 0, mid = 0, high= n-1;
+    while (mid <= high)
     {
-
-        // left pointer
-        while (left <= right && sum > k)
-        {
-            sum -= arr[left];
-            left++;
+        if(arr[mid] == 0){
+            swap(arr[low],arr[mid]);
+            low++;
+            mid++;
         }
-
-        // checking
-
-        if (sum == k)
-        {
-            maxLen = max(maxLen, right - left + 1);
+        else if(arr[mid] == 1){
+            mid++;
         }
-
-        // right pointer
-
-        right++;
-        if (right < n)
-        {
-            sum += arr[right];
+        else{
+            swap(arr[mid],arr[high]);
+            high--;
         }
     }
-
-    return maxLen;
+    
 }
 
-int main()
-{
-    vector<int> arr = {1, 1, 2, 1, 2, 3, 4, 4, 5, 3};
+
+
+
+int main(){
+    vector<int> arr = {1,2,0,0,1,2};
     int n = arr.size();
-    int k = 6;
-    int longestSub = longestSubarrayWithSumK(arr, n, k);
-    cout << longestSub << endl;
-    return 0;
+    SortColors(arr,n);
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    
 }
