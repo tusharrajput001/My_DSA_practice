@@ -345,45 +345,86 @@ using namespace std;
 //     return 0;
 // }
 
+// sort 0 1 2s in an array / Sort colors
 
+// brute - sorting (selection sort, Quick sort, merge sort)
+//  Better Approach is - >
+// dutch national flag Algorithm
+// void SortColors(vector<int> &arr, int n)
+// {
+//     int low = 0, mid = 0, high = n - 1;
+//     while (mid <= high)
+//     {
+//         if (arr[mid] == 0)
+//         {
+//             swap(arr[low], arr[mid]);
+//             low++;
+//             mid++;
+//         }
+//         else if (arr[mid] == 1)
+//         {
+//             mid++;
+//         }
+//         else
+//         {
+//             swap(arr[mid], arr[high]);
+//             high--;
+//         }
+//     }
+// }
 
+// int main()
+// {
+//     vector<int> arr = {1, 2, 0, 0, 1, 2};
+//     int n = arr.size();
+//     SortColors(arr, n);
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
 
-//sort 0 1 2s in an array / Sort colors
+// majority element > n/2 times
 
-//brute - sorting (selection sort, Quick sort, merge sort)
-// Better Approach is - > 
+#include <bits/stdc++.h>
+using namespace std;
 
-//dutch national flag Algorithm
-void SortColors(vector<int>& arr, int n){
-    int low = 0, mid = 0, high= n-1;
-    while (mid <= high)
-    {
-        if(arr[mid] == 0){
-            swap(arr[low],arr[mid]);
-            low++;
-            mid++;
-        }
-        else if(arr[mid] == 1){
-            mid++;
-        }
-        else{
-            swap(arr[mid],arr[high]);
-            high--;
-        }
-    }
-    
-}
+// moore's voting algorithm
+int majorityElement(vector<int> &arr, int n)
+{
+    int cnt = 0;
+    int el;
 
-
-
-
-int main(){
-    vector<int> arr = {1,2,0,0,1,2};
-    int n = arr.size();
-    SortColors(arr,n);
+    // this is the moores voting algo this gives me the most repeating number in array as el at the end
     for (int i = 0; i < n; i++)
     {
-        cout << arr[i] << " ";
+        if (cnt == 0)
+        {
+            cnt = 1;
+            el = arr[i];
+        }
+        else if (el == arr[i])
+            cnt++;
+        else
+            cnt--;
     }
-    
+
+    int cnt1 = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (el == arr[i])
+            cnt1++;
+    }
+    if (cnt1 > (n / 2))
+        return el;
+    return -1;
+}
+
+int main()
+{
+    vector<int> arr = {2, 2, 2, 4, 1, 8, 4, 2, 2, 2};
+    int n = arr.size();
+    int majority = majorityElement(arr, n);
+    cout << majority << " ";
+    return 0;
 }
