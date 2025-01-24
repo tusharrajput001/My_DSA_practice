@@ -386,45 +386,94 @@ using namespace std;
 
 // majority element > n/2 times
 
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// // moore's voting algorithm
+// int majorityElement(vector<int> &arr, int n)
+// {
+//     int cnt = 0;
+//     int el;
+
+//     // this is the moores voting algo this gives me the most repeating number in array as el at the end
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (cnt == 0)
+//         {
+//             cnt = 1;
+//             el = arr[i];
+//         }
+//         else if (el == arr[i])
+//             cnt++;
+//         else
+//             cnt--;
+//     }
+
+//     int cnt1 = 0;
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (el == arr[i])
+//             cnt1++;
+//     }
+//     if (cnt1 > (n / 2))
+//         return el;
+//     return -1;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {2, 2, 2, 4, 1, 8, 4, 2, 2, 2};
+//     int n = arr.size();
+//     int majority = majorityElement(arr, n);
+//     cout << majority << " ";
+//     return 0;
+// }
+
+
+
+//maximum subarray sum
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int maxSubarrSum(vector<int> &arr, int n)
+// {
+//     int maxi = INT_MIN;
+//     int sum = 0;
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         sum += arr[i];
+
+//         if (sum > maxi)
+//         {
+//             maxi = sum;
+//         }
+
+//         if (sum < 0)
+//         {
+//             sum = 0;
+//         }
+//     }
+//     return maxi;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {-2,1,-3,4,-1,2,1,-5,4};
+//     int n = arr.size();
+//     int maxSubSum = maxSubarrSum(arr, n);
+//     cout << maxSubSum << " ";
+//     return 0;
+// }
+
+
+
+
+#include<bits/stdc++.h>
 using namespace std;
 
-// moore's voting algorithm
-int majorityElement(vector<int> &arr, int n)
-{
-    int cnt = 0;
-    int el;
-
-    // this is the moores voting algo this gives me the most repeating number in array as el at the end
-    for (int i = 0; i < n; i++)
-    {
-        if (cnt == 0)
-        {
-            cnt = 1;
-            el = arr[i];
-        }
-        else if (el == arr[i])
-            cnt++;
-        else
-            cnt--;
-    }
-
-    int cnt1 = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (el == arr[i])
-            cnt1++;
-    }
-    if (cnt1 > (n / 2))
-        return el;
-    return -1;
-}
-
-int main()
-{
-    vector<int> arr = {2, 2, 2, 4, 1, 8, 4, 2, 2, 2};
-    int n = arr.size();
-    int majority = majorityElement(arr, n);
-    cout << majority << " ";
+int main(){
     return 0;
+
 }
