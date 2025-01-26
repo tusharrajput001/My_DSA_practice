@@ -88,34 +88,74 @@
 using namespace std;
 
 
-vector<int> Rearrange(vector<int>&arr, int n){
-    int PosIdx=0, NegIdx=1;
-    vector<int> ans(n);
-    for (int i = 0; i < n; i++)
-    {   
-        //if +ve
-        if(arr[i] > 0){
-            ans[PosIdx] = arr[i];
-            PosIdx +=2;
-        }
-        //if -ve
-        else{
-            ans[NegIdx] = arr[i];
-            NegIdx += 2;
+// vector<int> Rearrange(vector<int>&arr, int n){
+//     int PosIdx=0, NegIdx=1;
+//     vector<int> ans(n);
+//     for (int i = 0; i < n; i++)
+//     {   
+//         //if +ve
+//         if(arr[i] > 0){
+//             ans[PosIdx] = arr[i];
+//             PosIdx +=2;
+//         }
+//         //if -ve
+//         else{
+//             ans[NegIdx] = arr[i];
+//             NegIdx += 2;
+//         }
+//     }
+//     return ans;
+// }
+
+
+// int main()
+// {
+//     vector<int> arr = {1, 11, -2, -32, -21, 3, 2, 5, 4, 33};
+//     int n = arr.size();
+//     vector<int> ans = Rearrange(arr,n);
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout << ans[i] << " ";
+//     }
+//     return 0;
+// }
+
+
+
+//longest consecutive Sequence
+
+int LongestConcSeq(vector<int>& arr, int n){
+    // insert the whole arr in set
+    int longest = 1;
+    unordered_set<int> st;
+    for(int i=0; i<n; i++){
+        st.insert(arr[i]);
+    }
+
+    for(auto it: st){
+        //now we will confirm that is selected element is the first element
+        if(st.find(it - 1) == st.end()){ // this can be our first element 
+            int cnt = 0;
+            int x = it;
+            // if found it + 1
+            while(st.find(it + 1) != st.end()){
+                x++;
+                cnt++;
+            }
+            longest = max(longest, cnt);
         }
     }
-    return ans;
+
+    return longest;
+
 }
 
 
-int main()
-{
-    vector<int> arr = {1, 11, -2, -32, -21, 3, 2, 5, 4, 33};
+
+int main(){
+    vector<int> arr = {5, 8, 3, 2, 1, 4};
     int n = arr.size();
-    vector<int> ans = Rearrange(arr,n);
-    for (int i = 0; i < n; i++)
-    {
-        cout << ans[i] << " ";
-    }
+    int SizeOfLongestSq = LongestConcSeq(arr,n);
+    cout << SizeOfLongestSq;
     return 0;
 }
