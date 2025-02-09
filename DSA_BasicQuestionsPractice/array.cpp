@@ -44,35 +44,37 @@
 //     cout << endl;
 // }
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
-vector<int> UnionOftwoArrays(vector<int> &a, vector<int> &b)
-{
-    int n1 = a.size();
-    int n2 = b.size();
-    vector<int> NewArr;
+// vector<int> UnionOftwoArrays(vector<int> &a, vector<int> &b)
+// {
+//     int n1 = a.size();
+//     int n2 = b.size();
+//     vector<int> NewArr;
 
-    set<int> st;
-    st.insert(a.begin(), a.end());
-    st.insert(b.begin(), b.end());
+//     set<int> st;
+//     st.insert(a.begin(), a.end());
+//     st.insert(b.begin(), b.end());
 
-    for (auto it : st)
-    {
-        NewArr.push_back(it);
-    }
+//     for (auto it : st)
+//     {
+//         NewArr.push_back(it);
+//     }
 
-    return NewArr;
-}
+//     return NewArr;
+// }
 
-int main()
-{
-    vector<int> a = {1, 2, 3, 4, 5, 6};
-    vector<int> b = {1, 2, 3, 7, 8};
-    vector<int> newArr = UnionOftwoArrays(a, b);
-    for (int i = 0; i < newArr.size(); i++)
-    {
-        cout << newArr[i] << " ";
-    }
-    return 0;
-}
+// int main()
+// {
+//     vector<int> a = {1, 2, 3, 4, 5, 6};
+//     vector<int> b = {1, 2, 3, 7, 8};
+//     vector<int> newArr = UnionOftwoArrays(a, b);
+//     for (int i = 0; i < newArr.size(); i++)
+//     {
+//         cout << newArr[i] << " ";
+//     }
+//     return 0;
+// }
+
+
