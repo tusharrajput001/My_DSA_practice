@@ -112,43 +112,70 @@ using namespace std;
 //     }
 // }
 
-vector<int> majorityElement(vector<int> &arr)
+// vector<int> majorityElement(vector<int> &arr)
+// {
+//     int n = arr.size();
+//     vector<int> ls;
+
+//     map<int, int> mpp;
+
+//     int mini = int(n / 3) + 1;
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         mpp[arr[i]]++;
+
+//         if (mpp[arr[i]] == mini)
+//         {
+//             ls.push_back(arr[i]);
+//         }
+
+//         if (ls.size() == 2)
+//             break;
+//     }
+//     return ls;
+// }
+
+// int main()
+// {
+//     vector<int> arr = {11, 33, 33, 11, 33, 11};
+//     vector<int> ans = majorityElement(arr);
+//     cout << "The majority elements are: ";
+//     for (auto it : ans)
+//         cout << it << " ";
+//     cout << "\n";
+//     return 0;
+// }
+
+// find length of longest subarr with 0 sum
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int LenOfLng(vector<int> &arr, int n)
 {
-    int n = arr.size();
-    vector<int> ls;
-
-    map<int, int> mpp;
-
-    int mini = int(n / 3) + 1;
-
+    int maxLen = 0;
     for (int i = 0; i < n; i++)
     {
-        mpp[arr[i]]++;
-
-        if (mpp[arr[i]] == mini)
+        int sum = arr[i];
+        for (int j = i + 1; j < n; j++)
         {
-            ls.push_back(arr[i]);
+            sum += arr[j];
+            if (sum == 0)
+            {
+                maxLen = max(maxLen, j);
+            }
         }
-
-        if (ls.size() == 2)
-            break;
     }
-    return ls;
+
+    return maxLen;
 }
 
 int main()
 {
-    vector<int> arr = {11, 33, 33, 11, 33, 11};
-    vector<int> ans = majorityElement(arr);
-    cout << "The majority elements are: ";
-    for (auto it : ans)
-        cout << it << " ";
-    cout << "\n";
+    vector<int> arr = {9, -3, 3, -1, 6, -5};
+    int n = arr.size();
+    int LenOfLongestSubArr = LenOfLng(arr, n);
+    cout << LenOfLongestSubArr;
     return 0;
 }
-
-
-
-
-
-
