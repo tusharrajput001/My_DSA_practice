@@ -149,33 +149,35 @@ using namespace std;
 
 // find length of longest subarr with 0 sum
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
-int LenOfLng(vector<int> &arr, int n)
-{
-    int maxLen = 0;
-    for (int i = 0; i < n; i++)
-    {
-        int sum = arr[i];
-        for (int j = i + 1; j < n; j++)
-        {
-            sum += arr[j];
-            if (sum == 0)
-            {
-                maxLen = max(maxLen, j);
-            }
-        }
-    }
+// int LenOfLng(vector<int> &arr, int n)
+// {
+//     int maxLen = 0;
+//     for (int i = 0; i < n; i++)
+//     {
+//         int sum = arr[i];
+//         for (int j = i + 1; j < n; j++)
+//         {
+//             sum += arr[j];
+//             if (sum == 0)
+//             {
+//                 maxLen = max(maxLen, j);
+//             }
+//         }
+//     }
 
-    return maxLen;
-}
+//     return maxLen;
+// }
 
-int main()
-{
-    vector<int> arr = {9, -3, 3, -1, 6, -5};
-    int n = arr.size();
-    int LenOfLongestSubArr = LenOfLng(arr, n);
-    cout << LenOfLongestSubArr;
-    return 0;
-}
+// int main()
+// {
+//     vector<int> arr = {9, -3, 3, -1, 6, -5};
+//     int n = arr.size();
+//     int LenOfLongestSubArr = LenOfLng(arr, n);
+//     cout << LenOfLongestSubArr;
+//     return 0;
+// }
+
+
